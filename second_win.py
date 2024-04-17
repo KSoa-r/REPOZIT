@@ -36,20 +36,20 @@ class TestWin(QWidget):
         self.timer = QLabel(txt_timer)
         self.sendresults = QPushButton(txt_sendresults)
 
-        self.l_line.addWidget(self.name, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.line_name, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.age, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.line_age, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.test1, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.starttest1, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.line_test1, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.test2, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.starttest2, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.line_test2, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.test3, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.starttest3, alignment = Qt.AlignCenter)
-        self.l_line.addWidget(self.line_test3, alignment = Qt.AlignCenter)
-        self.r_line.addWidget(self.timer, alignment = Qt.AlignCenter)
+        self.l_line.addWidget(self.name, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.line_name, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.age, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.line_age, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.test1, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.starttest1, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.line_test1, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.test2, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.starttest2, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.test3, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.starttest3, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.line_test2, alignment = Qt.AlignLeft)
+        self.l_line.addWidget(self.line_test3, alignment = Qt.AlignLeft)
+        self.r_line.addWidget(self.timer, alignment = Qt.AlignLeft)
         self.l_line.addWidget(self.sendresults, alignment = Qt.AlignCenter)
 
         self.h_line.addLayout(self.l_line)
@@ -57,12 +57,8 @@ class TestWin(QWidget):
         self.setLayout(self.h_line)
     
     def connects(self):
-        self.sendresults.clicked.connects(self.next_click)
+        self.sendresults.clicked.connect(self.next_click)
 
     def next_click(self):
         self.hide()
         self.final_win = FinalWin()
-
-# app = QApplication([])
-# window = TestWin()
-# app.exec_()
