@@ -22,6 +22,3 @@ class FinalWin(QWidget):
         self.setLayout(self.layout)
 
 
-app = QApplication([])
-myapp = FinalWin()
-app.exec_()
